@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Festive&family=Great+Vibes&family=Lobster&family=Redressed&family=Satisfy&family=ZCOOL+QingKe+HuangYou&display=swap');
 *,
 ::before,
 ::after{
@@ -5,6 +6,49 @@
   margin:0;
   box-sizing: border-box;
 }
-.container{
-  background: linear-gradient(rgba(239, 229, 215,0.4),rgba(0,0,0,0.7));
+body{
+    min-height: 100vh;
+    background:linear-gradient(rgba(63, 208, 212, 0.4), rgba(0, 0, 0, 0.7)),
+    url(./Images/world2.jpg) center/cover no-repeat;
+}
+.container-section{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.heading{
+  color:aquamarine;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top:150px;
+  letter-spacing: 0.3rem;
+  font-family: 'ZCOOL QingKe HuangYou',
+  cursive;
+}
+.section-continents{
+  position:absolute;
+  top:50%;
+}
+label{
+  color:#00ced1;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+select{
+  padding:10px 15px;
+  background-color: transparent;
+  border-color:none;
+  background:#e0ffff;
+  border-radius: 20px;
+  color:#008b8b;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height:1.5;
+  text-align:center;
+  box-shadow: 10px 5px 15px 0px rgba(0,0,0,0.4);
+}
+.country-container{
+  display:grid;
+  grid-template-columns: auto auto auto;
+  padding:10px;
 }
