@@ -1,9 +1,21 @@
 import '../App.css';
 import React from 'react';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
+import axios from 'axios';
 
 const Container = () =>{
     const[description,setDescription] = useState('Africa');
+    const[continent,setContinent] = useState([]);
+
+    const getCountries = () => {
+        axios.get('https://restcountries.com/v3.1/all').then((response) => {
+            console.log(response);
+            const country = response.data;
+            setContinent(country);
+        });
+    };
+      useEffect(() => getCountries(), [])
+           
     return(
         <body>
           <section className='container-section'>
@@ -22,6 +34,9 @@ const Container = () =>{
                       <option value="Oceania">Oceania</option>
                       
                   </select>
+              </div>
+              <div className='countries'>
+                 
               </div>
               </section> 
            </body>
