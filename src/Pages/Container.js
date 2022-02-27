@@ -10,6 +10,7 @@ const Container = () =>{
 
       const HandleChangeApi = async (e) =>{
           setContinent(e.target.value);
+          e.preventDefault();
          axios.get(`https://restcountries.com/v3.1/region/${e.target.value}`)
          .then((response) =>{
             //  let data = response.data;

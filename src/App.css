@@ -24,13 +24,19 @@ body{
   font-family: 'ZCOOL QingKe HuangYou',
   cursive;
   position:absolute;
-  top:0%;
-  left:50%;
+  top:5%;
+  left:30%;
 }
 .section-continents{
   position:absolute;
-  top:10%;
+  top:40%;
+  left:5%;
 }
+/* @media screen and (min-width:768px){
+  .section-continents{
+    top:40%;
+  }
+} */
 label{
   color:#00ced1;
   text-transform: uppercase;
@@ -49,20 +55,42 @@ select{
   text-align:center;
   box-shadow: 10px 5px 15px 0px rgba(0,0,0,0.4);
 }
-.country-container{
+/* .country-container{
   display:grid;
   grid-template-columns: auto auto auto;
   padding:10px;
-}
+} */
 .countries-display{
   min-height:100vh;
+  width:90vw;
+  max-width:1170px;
   display:grid;
+  grid-template-columns: 250px 1fr;
+  gap:1rem;
+  justify-items:center;
   place-items: center;
-  grid-template-columns: auto auto auto;
-  margin-top:150px;
-  padding:10px;
+  margin-top:140px;
+}
+@media screen and (min-width: 768px) {
+  .section-continents {
+    top: 30%;
+  }
+  .countries-display{
+    grid-template-columns: 150px 1fr 1fr 1fr 1fr;
+    margin-top:180px;
+  }
+}
+@media screen and (min-width: 1200px){
+  .section-continents {
+    top: 20%;
+  }
 }
 .displayer img{
-  height:100px;
+  height:70px;
   display:block;
+}
+.displayer .name-flag{
+  font-size:16px;
+  text-transform: uppercase;
+  color:#b0e0e6;
 }
