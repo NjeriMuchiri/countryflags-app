@@ -1,6 +1,6 @@
 import '../App.css';
 import React from 'react';
-import { useState,useEffect } from 'react';
+import { useState} from 'react';
 import axios from 'axios';
 
 const Container = () =>{
@@ -8,16 +8,18 @@ const Container = () =>{
     const[countries,setCountries] = useState([]);
     const[continent,setContinent] = useState('');
 
-      const HandleChangeApi = async () =>{
-         axios.get(`https://restcountries.com/v3.1/region/ame`)
+      const HandleChangeApi = async (e) =>{
+          setContinent(e.target.value);
+         axios.get(`https://restcountries.com/v3.1/region/${e.target.value}`)
          .then((response) =>{
             //  let data = response.data;
             console.log(response)
+            setCountries(response.data.map((item) =>item))
          })
          .catch((error)=>{
              console.log(error);
          });
-      }
+         };
     // useEffect(() =>{
     //     axios.get(`https://restcountries.com/v3.1/region/ame`)
     //     .then(res => {
@@ -44,19 +46,24 @@ const Container = () =>{
                       <option value="Africa">Africa</option>
                       <option value="Asia">Asia</option>
                       <option value="Europe">Europe</option>
-                      <option value="Antartica">Antartica</option>
+                      <option value="Americas">Americas</option>
                       <option value="Oceania">Oceania</option>
                   </select>
-                  <div className='countries-display'>
-                  {continent.length !== 0 && countries.map(country => 
-                      <div key={country.area}>  
-                      <img src={country.flag.svg} alt={country.name.common} />  
-                      <h4>{country.name.common}</h4>          
-                          </div>
-                  )}
-                  </div>
+
                     </div>
+                     <div className='countries-display'> 
+                     {continent.length !== 0 &&
+                     countries.map((item) =>(
+                         <div key={item.area}>
+                             <article className='displayer'>
+                                 <img src={item.flags.svg} alt={item.name.common} />
+                                 <h1 className='name-flag'>{item.name.common}</h1>
+                             </article>
+                         </div>
+                     )) }
+                  </div>
               </section> 
+
            </>
     );
 };
