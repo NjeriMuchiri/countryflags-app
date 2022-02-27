@@ -29,7 +29,7 @@ body{
 }
 .section-continents{
   position:absolute;
-  top:18%;
+  top:20%;
   left:5%;
 }
 /* @media screen and (min-width:768px){
@@ -65,11 +65,11 @@ select{
   width:90vw;
   max-width:1170px;
   display:grid;
-  grid-template-columns: 200px 1fr 1fr;
+  grid-template-columns: 200px 1fr;
   gap:1rem;
   justify-items:center;
   place-items: center;
-  margin-top:140px;
+  margin-top:160px;
 }
 @media screen and (min-width: 768px) {
   .section-continents {
