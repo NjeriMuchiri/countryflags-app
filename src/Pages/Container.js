@@ -37,13 +37,14 @@ const Container = () =>{
               <h1 className='heading' >Continent Flags</h1>
               <div className="section-continents">
                   <label htmlFor="Continents">Choose a Continent: </label>
+                  
                   <select 
                   onChange = {HandleChangeApi}
                 //   value={continent}
                   
                 // onChange ={(e) =>setContinent(e.target.value)
                 // }
-            >
+            >         
                       <option value="Africa">Africa</option>
                       <option value="Asia">Asia</option>
                       <option value="Europe">Europe</option>

@@ -9,7 +9,8 @@
 body{
     min-height: 100vh;
     background:linear-gradient(rgba(63, 208, 212, 0.4), rgba(0, 0, 0, 0.7)),
-    url(./Images/world2.jpg) center/cover no-repeat;
+    url(./Images/reveal_1.jpg) center/cover no-repeat;
+    object-fit: contain;
 }
 .container-section{
     display:flex;
